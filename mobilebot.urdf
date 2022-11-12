@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name= "mobilebot">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0204960048474822 0 -0.0433301874953387" rpy="0 0 0" />
+      <mass value="31.8035482068551" />
+      <inertia ixx="0.576277968134192"
+        ixy="2.8864364653848E-16"
+        ixz="0.0286903575631527"
+        iyy="1.86337642229178"
+        iyz="-3.90438076182109E-17"
+        izz="2.3911268084797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="linkleft">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -0.0150888529886914 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.97232292628604" />
+      <inertia
+        ixx="0.00298429263256056"
+        ixy="2.80118260429211E-19"
+        ixz="-2.73255779818481E-35"
+        iyy="0.00555828243731782"
+        iyz="2.14831426054844E-36"
+        izz="0.00298429263256056" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/linkleft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/linkleft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftjoint"
+    type="continuous">
+    <origin
+      xyz="-0.15 0.27 -0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkleft" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="linkright">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0.0150888529886916 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.972322926286042" />
+      <inertia
+        ixx="0.00298429263256057"
+        ixy="3.20214034408229E-19"
+        ixz="1.15867048576494E-19"
+        iyy="0.00555828243731783"
+        iyz="-2.06958169180347E-20"
+        izz="0.00298429263256057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/linkright.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/manyu/ros2_ws/src/lab7/meshes/linkright.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightjoint"
+    type="continuous">
+    <origin
+      xyz="-0.15 -0.27 -0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkright" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="1"
+      velocity="1" />
+  </joint>
+</robot>
